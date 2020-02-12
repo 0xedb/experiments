@@ -39,8 +39,22 @@ function preorder(head) {
   preorder(head.right);
 }
 
+function preorderRecursive(head) {
+  let stack = new Array();
+  stack.push(head);
+
+  while (stack.length !== 0) {
+    let removed = stack.pop();
+    console.log(removed.data);
+    if (removed.right) stack.push(removed.right);
+    if (removed.left) stack.push(removed.left);
+  }
+}
+
 indorder(head);
 console.log("************");
 postorder(head);
 console.log("************");
 preorder(head);
+console.log("************");
+preorderRecursive(head);
