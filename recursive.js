@@ -1,28 +1,40 @@
 class Node {
-  constructor(data){
-    this.data = data
-    this.left = null
-    this.right = null
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
   }
 }
 
-head = new Node(4)
-head.left = new Node(3)
-head.right = new Node(10)
-head.right.right = new Node(11)
+head = new Node(4);
+head.left = new Node(3);
+head.right = new Node(10);
+head.right.right = new Node(11);
 
-console.table(head)
+console.table(head);
 
 function indorder(head) {
-  if(head === null) return 
+  if (head === null) return;
   // left
-  indorder(head.left)
-  
+  indorder(head.left);
+
   // parent
-  console.log(head.data)
-  
+  console.log(head.data);
+
   // right
-  indorder(head.right)
+  indorder(head.right);
 }
 
-indorder(head)
+function postorder(head) {
+  if (head === null) return;
+  postorder(head.left);
+  postorder(head.right);
+  console.log(head.data);
+}
+
+
+indorder(head);
+console.log("************");
+postorder(head);
+console.log("************");
+
