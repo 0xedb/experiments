@@ -32,9 +32,15 @@ function postorder(head) {
   console.log(head.data);
 }
 
+function preorder(head) {
+  if (head === null) return;
+  console.log(head.data);
+  preorder(head.left);
+  preorder(head.right);
+}
 
 indorder(head);
 console.log("************");
 postorder(head);
 console.log("************");
-
+preorder(head);
