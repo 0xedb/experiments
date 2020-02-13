@@ -10,19 +10,44 @@ head = new Node(4);
 head.left = new Node(3);
 head.right = new Node(10);
 head.right.right = new Node(11);
+head.right.left = new Node(9)
 
 console.table(head);
 
 function indorder(head) {
   if (head === null) return;
-  // left
+
   indorder(head.left);
-
-  // parent
   console.log(head.data);
-
-  // right
   indorder(head.right);
+}
+
+function inorderIterative(head) {
+  let stack = new Array();
+  stack.push(head);
+  if (head.right) stack.push(head.right);
+  if (head.left) stack.push(head.left);
+
+  while (stack.length !== 0) {
+    let current = stack[stack.length - 1];
+    if (!current.left && !current.right) {
+      console.log(current.data);
+      stack.pop();
+    } else {
+      let self = stack.pop();
+      let next = stack.pop();
+      if (current.right) {
+        stack.push(current.right);
+      }
+      if (current.left) {
+        stack.push(current.left);
+      }
+
+      stack.push(new Node(self.data));
+
+      stack.push(new Node(next.data));
+    }
+  }
 }
 
 function postorder(head) {
@@ -74,9 +99,11 @@ function preorderRecursive(head) {
   }
 }
 
-postorder(head);
+indorder(head);
 console.log("************");
-postorderIterative(head);
+inorderIterative(head);
+// postorder(head);
+// postorderIterative(head);
 // indorder(head);
 // console.log("************");
 // preorder(head);
