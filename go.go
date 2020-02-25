@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt" 
+	"os/user"
 )
 
 // Node represents node of a linked structure
@@ -22,6 +23,9 @@ func main() {
 
 	linkedList := Node{300, nil}
 	fmt.Println(linkedList)
+
+	me, _ := user.Current()
+	fmt.Println(me.Username) 
 }
 
 // Adder adds 2 numbers
