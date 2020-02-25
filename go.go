@@ -5,6 +5,12 @@ import (
 	"math"
 )
 
+// Node represents node of a linked structure
+type Node struct {
+	data int
+	next *Node
+}
+
 func main() {
 	fmt.Println("one")
 	fmt.Println(math.Abs(-239393))
