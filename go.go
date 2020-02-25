@@ -19,6 +19,9 @@ func main() {
 
 	fmt.Println(i)
 	fmt.Println(*p)
+
+	linkedList := Node{300, nil}
+	fmt.Println(linkedList)
 }
 
 // Adder adds 2 numbers
