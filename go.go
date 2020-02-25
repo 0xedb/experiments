@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-	"math"
+	"fmt" 
 )
 
 // Node represents node of a linked structure
@@ -13,21 +12,13 @@ type Node struct {
 
 func main() {
 	fmt.Println("one")
-	fmt.Println(math.Abs(-239393))
-	fmt.Println(Adder(220, 23))
-	fmt.Println(AddSub(39, 10))
-
-	const FACTOR = 2;
-
-	w := 3993.283
-	x := int(w)
-	fmt.Println(x * FACTOR)
-
+	
 	i := 20
-	for ; i < 50; {
-		fmt.Println(i)
-		i++
-	}
+	p := &i
+	*p = 300
+
+	fmt.Println(i)
+	fmt.Println(*p)
 }
 
 // Adder adds 2 numbers
