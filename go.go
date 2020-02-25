@@ -10,6 +10,10 @@ func main() {
 	fmt.Println(math.Abs(-239393))
 	fmt.Println(Adder(220, 23))
 	fmt.Println(AddSub(39, 10))
+
+	w := 3993.283
+	x := int(w)
+	fmt.Println(x)
 }
 
 // Adder adds 2 numbers
