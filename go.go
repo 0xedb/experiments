@@ -16,6 +16,12 @@ func main() {
 	w := 3993.283
 	x := int(w)
 	fmt.Println(x * FACTOR)
+
+	i := 20
+	for ; i < 50; {
+		fmt.Println(i)
+		i++
+	}
 }
 
 // Adder adds 2 numbers
