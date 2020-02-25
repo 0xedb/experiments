@@ -11,9 +11,11 @@ func main() {
 	fmt.Println(Adder(220, 23))
 	fmt.Println(AddSub(39, 10))
 
+	const FACTOR = 2;
+
 	w := 3993.283
 	x := int(w)
-	fmt.Println(x)
+	fmt.Println(x * FACTOR)
 }
 
 // Adder adds 2 numbers
