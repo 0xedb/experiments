@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt" 
+	"fmt"
 	"os/user"
 )
 
@@ -13,7 +13,7 @@ type Node struct {
 
 func main() {
 	fmt.Println("one")
-	
+
 	i := 20
 	p := &i
 	*p = 300
@@ -25,7 +25,11 @@ func main() {
 	fmt.Println(linkedList)
 
 	me, _ := user.Current()
-	fmt.Println(me.Username) 
+	fmt.Println(me.Username)
+
+	v := map[string]int{"bruno": 30}
+	fmt.Println(v["bruno"])
+
 }
 
 // Adder adds 2 numbers
