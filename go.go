@@ -11,6 +11,10 @@ type Node struct {
 	next *Node
 }
 
+func (n *Node) toString() string {
+	return fmt.Sprintf("%v*******", n.data)
+}
+
 func main() {
 	fmt.Println("one")
 
@@ -29,6 +33,8 @@ func main() {
 
 	v := map[string]int{"bruno": 30}
 	fmt.Println(v["bruno"])
+
+	fmt.Println(linkedList.toString())
 
 }
 
