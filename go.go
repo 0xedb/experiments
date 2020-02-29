@@ -27,6 +27,7 @@ func main() {
 	var wg sync.WaitGroup
 	channel := make(chan string)
 	go send(channel, &wg)
-	// go receive(channel, &wg) 
+	go receive(channel, &wg) 
 	defer wg.Wait()
 }
+ 
