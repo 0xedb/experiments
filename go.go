@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"sync"
-)
+) 
 
 func send(ch chan string, wg *sync.WaitGroup) {
 	wg.Add(1)
