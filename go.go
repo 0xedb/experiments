@@ -10,8 +10,8 @@ func send(ch chan string, wg *sync.WaitGroup) {
 	for {
 		fmt.Println("sent")
 		ch <- "sent"
-	}
-	defer wg.Done()
+	} 
+	defer wg.Done() 
 }
 
 func receive(ch chan string, wg *sync.WaitGroup) {
@@ -19,7 +19,7 @@ func receive(ch chan string, wg *sync.WaitGroup) {
 	for {
 		r := <-ch
 		fmt.Println(r)
-	}
+	} 
 	defer wg.Done() 
 }
 
