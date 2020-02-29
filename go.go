@@ -23,11 +23,21 @@ func receive(ch chan string, wg *sync.WaitGroup) {
 	defer wg.Done()
 }
 
+func runnable(wg *sync.WaitGroup) {
+	wg.Add(1)
+	a := 0
+	for {
+		fmt.Printf("%v::\n", a)
+		if a == 20 {
+			wg.Done()
+			return
+		}
+	}
+
+}
+
 func main() {
 	var wg sync.WaitGroup
-	channel := make(chan string)
-	go send(channel, &wg)
-	go receive(channel, &wg) 
-	defer wg.Wait()
+	go runnable(&wg)
+	wg.Wait()
 }
- 
