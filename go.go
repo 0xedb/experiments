@@ -20,7 +20,7 @@ func receive(ch chan string, wg *sync.WaitGroup) {
 		r := <-ch
 		fmt.Println(r)
 	}
-	defer wg.Done()
+	defer wg.Done() 
 }
 
 func runnable(wg *sync.WaitGroup) {
