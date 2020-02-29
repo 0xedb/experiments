@@ -31,7 +31,7 @@ func runnable(wg *sync.WaitGroup) {
 		if a == 20 {
 			wg.Done()
 			return
-		} 
+		}  
 	}
 
 }
