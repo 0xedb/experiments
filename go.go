@@ -37,7 +37,7 @@ func runnable(wg *sync.WaitGroup) {
 }
 
 func main() {
-	var wg sync.WaitGroup
+	var wg sync.WaitGroup  
 	go runnable(&wg)
 	wg.Wait()
 }
