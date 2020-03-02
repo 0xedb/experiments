@@ -1,10 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
-{
-  int age;
-  printf("Hello, what's your age? ");
-  scanf("%d", &age);
-  printf("You claim you're %d year(s) old", age);
+{ 
+  int arr[] = {1, 3, 5, 329};
+  printf("%d", arr[3]);
   return 0;
 }
