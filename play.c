@@ -1,9 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int double_it(int*);
+
 int main(void)
-{ 
-  int arr[] = {1, 3, 5, 329};
-  printf("%d", arr[3]);
+{  
+  int n = 10;
+  double_it(&n); 
+
+  printf("%d", n);
+
   return 0;
+}
+
+
+int double_it(int* num) {
+  return *num *= 2;
 }
