@@ -13,6 +13,9 @@ int main(void)
   printf("%d", n);
   printf("\n%d\n", v);
 
+  char* str = "Bruno";
+  printf("%s", str);
+
   return 0;
 }
 
