@@ -25,6 +25,7 @@ int double_it(int* num) {
 }
 
 int const_next(const int* num) {
+  
   return *num + 1;
 }
 
@@ -38,4 +39,3 @@ int const_next(const int* num) {
 
 
 
-  
