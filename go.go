@@ -19,4 +19,7 @@ func main() {
 	fmt.Printf("%v\n", two)
 	fmt.Printf("%v\n", falsy)
 	fmt.Printf("%v\n", truthy) 
+	falsy, truthy = truthy, falsy
+	fmt.Printf("%v\n", falsy)
+	fmt.Printf("%v\n", truthy) 
 }
