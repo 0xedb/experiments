@@ -4,6 +4,11 @@ import (
 	"fmt"
 )
 
+type Node struct {
+	data int
+	next *Node
+}
+
 func main() {
 	var(
 		many = "many"
@@ -22,4 +27,6 @@ func main() {
 	falsy, truthy = truthy, falsy
 	fmt.Printf("%v\n", falsy)
 	fmt.Printf("%v\n", truthy) 
+	nn := new(Node)
+	fmt.Printf("%v\n", nn)
 }
