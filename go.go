@@ -29,4 +29,6 @@ func main() {
 	fmt.Printf("%v\n", truthy) 
 	nn := new(Node)
 	fmt.Printf("%v\n", nn)
+	ww := make([]int,3)
+	fmt.Print(ww[0])
 }
