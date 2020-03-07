@@ -9,6 +9,13 @@ type Node struct {
 	next *Node
 }
 
+func cleanup() {
+	r := recover();
+	if r != nil {
+		fmt.Println("recovered from ", r)
+	}
+}
+
 func main() {
 	var(
 		many = "many"
@@ -18,7 +25,7 @@ func main() {
 		falsy = false
 		truthy = true
 	)
-
+	defer cleanup()
 	panic("good")
 	fmt.Printf("%v\n", many)
 	fmt.Printf("%v\n", atom)
