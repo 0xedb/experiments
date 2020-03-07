@@ -18,6 +18,8 @@ func main() {
 		falsy = false
 		truthy = true
 	)
+
+	panic("good")
 	fmt.Printf("%v\n", many)
 	fmt.Printf("%v\n", atom)
 	fmt.Printf("%v\n", one)
