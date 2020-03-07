@@ -26,9 +26,9 @@ func main() {
 		truthy = true
 	)
 	defer cleanup()
-	a := [...]int{1, 3}
-	fmt.Println(a[49])
-	panic("good")
+	// a := [...]int{1, 3}
+	// fmt.Println(a[49])
+	panic("panic badly")
 	fmt.Printf("%v\n", many)
 	fmt.Printf("%v\n", atom)
 	fmt.Printf("%v\n", one)
