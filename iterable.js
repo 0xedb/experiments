@@ -1,3 +1,5 @@
+'use strict'
+
 let nos = {
   first: 1,
   last: 3
@@ -48,11 +50,11 @@ let test = {
 };
 
 Object.defineProperty(test, 'msg', {
-  writable: false,
-  enumerable: false
+  value: 'LAST',
+  writable: false, 
 }) 
 
-test.msg = 'something'
+// test.msg = 'something'
 console.log(test)
 console.log(test.msg)
 
