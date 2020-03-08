@@ -23,12 +23,7 @@ nos[Symbol.iterator] = function() {
       return { done: true };
     }
   };
-};
-
-// for (let a of nos) console.log(a);
-// console.log(arr[2]);
-
-// console.log(Array.from(nos));
+}; 
 
 // need for weakmaps
 let john = {
