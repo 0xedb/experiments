@@ -23,17 +23,37 @@ nos[Symbol.iterator] = function() {
   };
 };
 
-for (let a of nos) console.log(a);
-console.log(arr[2]);
+// for (let a of nos) console.log(a);
+// console.log(arr[2]);
 
-console.log(Array.from(nos));
+// console.log(Array.from(nos));
 
 // need for weakmaps
 let john = {
   name: "jon"
 };
 
-nos.john = john
-john = null
-console.log(john)
-console.log(nos)
+let mp = new Map().set(john, "john........");
+let mpp = new WeakMap().set(john, "john..............");
+
+console.log(mpp.get(john));
+john = null;
+console.log(mp);
+console.log(mpp);
+// console.log(john)
+
+let test = {
+  one: 1,
+  msg: "hello"
+};
+
+Object.defineProperty(test, 'msg', {
+  writable: false,
+  enumerable: false
+}) 
+
+test.msg = 'something'
+console.log(test)
+console.log(test.msg)
+
+
