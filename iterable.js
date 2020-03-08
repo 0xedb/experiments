@@ -3,6 +3,13 @@ let nos = {
   last: 6
 };
 
+let arr = {
+  0: 'one',
+  1: 'two',
+  2: 'three',
+  length: 3
+}
+
 nos[Symbol.iterator] = function() {
   return {
     current: this.first, 
@@ -17,3 +24,4 @@ nos[Symbol.iterator] = function() {
 };
 
 for (let a of nos) console.log(a);
+console.log(arr[0])
