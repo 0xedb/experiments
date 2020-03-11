@@ -40,7 +40,7 @@ console.log(mpp);
 // console.log(john)
  
 let test = {
-  one: 1, 
+  one: 1,  
   msg: "hello"
 }; 
  
