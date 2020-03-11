@@ -42,7 +42,7 @@ console.log(mpp);
 let test = {
   one: 1, 
   msg: "hello"
-};
+}; 
 
 Object.defineProperty(test, 'msg', {
   value: 'LAST',
