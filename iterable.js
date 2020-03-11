@@ -35,7 +35,7 @@ let mpp = new WeakMap().set(john, "john..............");
 
 console.log(mpp.get(john));
 john = null;
-console.log(mp);
+console.log(mp); 
 console.log(mpp);
 // console.log(john)
  
