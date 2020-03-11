@@ -24,7 +24,7 @@ nos[Symbol.iterator] = function() {
     }
   };
 }; 
-
+ 
 // need for weakmaps
 let john = {
   name: "jon"
