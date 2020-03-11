@@ -38,7 +38,7 @@ john = null;
 console.log(mp);
 console.log(mpp);
 // console.log(john)
-
+ 
 let test = {
   one: 1,
   msg: "hello"
