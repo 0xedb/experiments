@@ -49,7 +49,7 @@ Object.defineProperty(test, 'msg', {
   writable: false, 
 }) 
 
-// test.msg = 'something'
+// test.msg = 'something' 
 console.log(test)
 console.log(test.msg)
 
