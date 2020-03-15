@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int double_it(int*);
 int const_next(const int*);
@@ -16,6 +17,8 @@ int main(void)
   char* str = "Bruno";
   printf("%s", str);
 
+
+  alarm(4);
   return 0;
 }
 
