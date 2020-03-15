@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <pthread.h>
 
-void *say_14();
+void *say();
 int *more(int *);
 
 int main(void)
 {
   int n = 10;
   pthread_t thread, thread1;
-  pthread_create(&thread, NULL, say_14, NULL);
+  pthread_create(&thread, NULL, say, NULL);
   pthread_create(&thread1, NULL, (void *)more, &n);
   printf("wow\n");
   pthread_join(thread, NULL);
@@ -19,7 +19,7 @@ int main(void)
   return 0;
 }
  
-void *say_14()
+void *say()
 {
   printf("saying... \n");
   return (void *)NULL;
