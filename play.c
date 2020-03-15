@@ -23,7 +23,7 @@ void *say_14()
 {
   printf("saying... \n");
   return (void *)NULL;
-}
+} 
 
 int *more(int *n)
 {
@@ -33,4 +33,3 @@ int *more(int *n)
 }
    
 
-   
