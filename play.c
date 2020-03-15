@@ -2,7 +2,7 @@
 #include <pthread.h>
 
 void *say();
-int *more(int *);
+int *more(int*);
 
 int main(void)
 {
