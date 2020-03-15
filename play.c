@@ -1,44 +1,32 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include <pthread.h>
 
-int double_it(int*);
-int const_next(const int*);
+void* say_14();
+int* more(int*);
 
-int main(void)
-{  
+int main(void) {
   int n = 10;
-  double_it(&n); 
-  int v = const_next(&n);
+  pthread_t thread, thread1;
+  pthread_create(&thread, NULL, say_14, NULL);
+  pthread_create(&thread1, NULL, (void*) more, &n);
+  printf("wow\n");
+  pthread_join(thread, NULL);
+  pthread_join(thread1, NULL);
+  printf("Oh, no...\n");
+  printf("%d\n", n);
 
-  printf("%d", n);
-  printf("\n%d\n", v);
 
-  char* str = "Bruno";
-  printf("%s", str);
-
-
-  alarm(4);
   return 0;
 }
 
 
-int double_it(int* num) {
-  return *num *= 2;
+void* say_14() {
+  printf("saying... \n");
+  return (void*) NULL;
 }
 
-int const_next(const int* num) {
-  
-  return *num + 1;
+int* more(int* n) {
+  printf("the multiplier\n");
+  *n *= *n;
+  return n;
 }
-
-
-
-  
-
-
-
-
-
-
-
