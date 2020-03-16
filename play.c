@@ -1,35 +1,9 @@
 #include <stdio.h>
-#include <pthread.h>
+#include <stdint.h>
 
-void *say();
-int *more(int*);
 
-int main(void)
-{
-  int n = 10;
-  pthread_t thread, thread1;
-  pthread_create(&thread, NULL, say, NULL);
-  pthread_create(&thread1, NULL, (void *)more, &n);
-  printf("wow\n");
-  pthread_join(thread, NULL);
-  pthread_join(thread1, NULL);
-  printf("Oh, no...\n");
-  printf("%d\n", n);
-
+int main(void) {
+  int16_t age = 232;
+  printf("you are %d year(s) old", age);
   return 0;
 }
- 
-void *say()
-{
-  printf("saying... \n");
-  return (void *)NULL;
-} 
-
-int *more(int *n)
-{
-  printf("the multiplier\n");
-  *n *= *n;
-  return n;
-}
-   
-
