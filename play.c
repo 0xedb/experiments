@@ -29,6 +29,8 @@ int main(void)
   insert(sll, &d);
   traverse(sll);
   free(sll);
+
+  printf("%d", UINT16_MAX);
   return 0;
 }
 
