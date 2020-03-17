@@ -14,8 +14,8 @@ void* second() {
   int i = 0;
   while(i++ < 20) {
     printf("hello\t %d\n", i);
-    return (void*) NULL;
   }
+    return (void*) NULL;
 }
 
 int main(void) {

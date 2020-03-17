@@ -7,58 +7,43 @@ struct Node
 {
   int *data;
   struct Node *next;
-};
+} * head;
 
-struct SinglyLinkedList
+void insert(struct Node *, int *);
+void traverse(struct Node *);
+
+void writ()
 {
-  struct Node *head;
-};
-
-void insert(struct SinglyLinkedList *, int *);
-void traverse(struct SinglyLinkedList *);
-
-void writ() {
-  int i = 0;
-  while(i < 10) printf("%d\n", i++);
+  int i = 1;
+  while (i <= 10)
+    printf("thrd:\t%d\n", i++);
 }
 
 int main(void)
-{ 
-  thrd_t thread;
-  thrd_create(&thread, writ, NULL);
-  thrd_join(thread, NULL);
+{
+  // thrd_t thread;
+  // thrd_create(&thread, (thrd_start_t)writ, NULL);
+  // thrd_join(thread, NULL);
 
   int a = 10;
   int b = 30;
   int c = 44;
-  int d = -70;
-  struct SinglyLinkedList *sll = malloc(sizeof(struct SinglyLinkedList));
-  insert(sll, &a);
-  insert(sll, &b);
-  insert(sll, &c);
-  insert(sll, &d);
-  traverse(sll);
-  free(sll); 
+  int d = -70;  
+  insert(head, &a);
+  insert(head, &b);
+  insert(head, &c);
+  insert(head, &d);
+  traverse(head); 
   return 0;
 }
 
-void insert(struct SinglyLinkedList *ll, int *val)
-{
-  struct Node *latest = (struct Node *)malloc(sizeof(struct Node));
-  latest->data = val;
-  latest->next = ll->head;
-  ll->head = latest;
+void insert(struct Node *head, int *val)
+{ 
+  struct Node latest = {val, head}; 
+  *head = latest;
 }
 
-void traverse(struct SinglyLinkedList *ll)
+void traverse(struct Node *head)
 {
-  struct Node *nav = ll->head;
-  while (nav)
-  {
-    printf("%d\n", *nav->data);
-    nav = nav -> next;
-  }
-
-  free(nav);
-  return;
+   
 }
