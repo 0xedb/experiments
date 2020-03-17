@@ -19,6 +19,7 @@ void* second() {
 }
 
 int main(void) {
+  pthread_mutex_t mutex;
   pthread_t thread, thread1;
   pthread_create(&thread, NULL, first, NULL);
   pthread_create(&thread1, NULL, second, NULL);
