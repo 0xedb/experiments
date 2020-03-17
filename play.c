@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
+#include <time.h>
+#include <threads.h>
 
 struct Node
 {
@@ -16,8 +17,17 @@ struct SinglyLinkedList
 void insert(struct SinglyLinkedList *, int *);
 void traverse(struct SinglyLinkedList *);
 
+void writ() {
+  int i = 0;
+  while(i < 10) printf("%d\n", i++);
+}
+
 int main(void)
 { 
+  thrd_t thread;
+  thrd_create(&thread, writ, NULL);
+  thrd_join(thread, NULL);
+
   int a = 10;
   int b = 30;
   int c = 44;
@@ -28,9 +38,7 @@ int main(void)
   insert(sll, &c);
   insert(sll, &d);
   traverse(sll);
-  free(sll);
-
-  printf("%d", UINT16_MAX);
+  free(sll); 
   return 0;
 }
 
@@ -48,6 +56,9 @@ void traverse(struct SinglyLinkedList *ll)
   while (nav)
   {
     printf("%d\n", *nav->data);
-    nav = nav->next;
+    nav = nav -> next;
   }
+
+  free(nav);
+  return;
 }
