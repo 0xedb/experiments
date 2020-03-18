@@ -7,8 +7,10 @@ func main() {
 	ab := 0xA
 	abb := 0b110
 	folder := `C:\n`
+	f := "C:\n"
 	fmt.Println("hey");
 	fmt.Println(a, ab);
 	fmt.Println(abb)
 	fmt.Println(folder)
+	fmt.Println(f)
 }
