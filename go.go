@@ -2,21 +2,19 @@ package main
 
 import "fmt"
 
+type node struct {
+	data int
+	next *node
+	info func() int
+}
+
+func five() int {
+	return 5
+}
+
 func main() {
-	type avid int
-	type bvid = bool
-	a := 010
-	ab := 0xA
-	abb := 0b110
-	folder := `C:\n`
-	f := "C:\n"
-	var b avid = 3000;
-	var c bvid = true
-	fmt.Println("hey");
-	fmt.Println(a, ab);
-	fmt.Println(abb)
-	fmt.Println(folder)
-	fmt.Println(f)
-	fmt.Println(b)
-	fmt.Println(c)
+	 var ll = node{10, nil, five}
+	 fmt.Println(ll.data)
+	 fmt.Println(ll.info())
+	 fmt.Println(ll.next)
 }
