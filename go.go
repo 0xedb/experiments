@@ -4,17 +4,19 @@ import "fmt"
 
 type node struct {
 	data int
-	next *node
-	info func() int
+	next *node 
 }
 
-func five() int {
-	return 5
+type nody interface {
+	info()
+}
+
+func (n node) nody() {
+	fmt.Println(n.data)
+	fmt.Println(n.next)
 }
 
 func main() {
-	 var ll = node{10, nil, five}
-	 fmt.Println(ll.data)
-	 fmt.Println(ll.info())
-	 fmt.Println(ll.next)
+	 var ll = node{10, nil}
+	 ll.nody()
 }
