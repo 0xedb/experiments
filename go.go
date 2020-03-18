@@ -17,6 +17,15 @@ func (n node) nody() {
 }
 
 func main() {
+	const (
+		_ = iota
+		A 
+		B
+		C
+	)
 	 var ll = node{10, nil}
 	 ll.nody()
+	 fmt.Println(A)
+	 fmt.Println(B)
+	 fmt.Println(C)
 }
