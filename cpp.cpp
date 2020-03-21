@@ -14,7 +14,8 @@ public:
   //   val = val;
   // }
   int str(void);
-};
+}; 
+
 
 int Node::str(void) {
   std::cout << "--------->";
