@@ -8,23 +8,24 @@ int mayer(int *a)
 class Node
 {
 public:
-  int val;
+  int val = 333;
   Node* next;
   // Node(int val) {
   //   val = val;
   // }
-  std::string str(void);
+  int str(void);
 };
 
-std::string Node::str(void) {
-  return "---> " + val;
+int Node::str(void) {
+  std::cout << "--------->";
+  return val;
 }
 
 int main(void)
 {
   int arr[] = {30, 230, 3};
   Node aa{};
-  aa.val = 4300;
+  aa.val = 9;
   std::cout << mayer(arr) << std::endl;
   std::cout << aa.str() << std::endl;
 }
