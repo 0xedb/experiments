@@ -1,10 +1,10 @@
- #include <iostream>
+#include <iostream>
 
-void nuller(std::nullptr_t n) {
-  std::cout << "This is null" << std::endl;
+int mayer(int* a) {
+  return a[0];
 }
 
- int main(void) {
-   void* ptr = nullptr;
-   nuller(nullptr);
- }
+int main(void) {
+  int arr[] = {30, 230, 3};
+  std::cout << mayer(arr) << std::endl;
+}
