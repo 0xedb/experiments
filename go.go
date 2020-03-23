@@ -15,6 +15,12 @@ func factorizor(factor, num int) func() int {
 	}
 }
 
+func p(a ...interface{}) {
+	for _, val := range a {
+		fmt.Printf("**%v\n", val)
+	}
+}
+
 func main() {
 	defer catchpanic()
 	slc := []int{}
@@ -26,4 +32,5 @@ func main() {
 
 	f := factorizor(10, 8)
 	fmt.Println(f())
+	p(20, "hello", '5', slc)
 }
