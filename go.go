@@ -1,36 +1,48 @@
 package main
 
-import "fmt"
+import (
+	"encoding/json"
+	"fmt"
+	"sync"
+)
 
-func catchpanic() {
-	r := recover()
-	if r != nil{
-	fmt.Println(r)
+func wrt(wg sync.WaitGroup, ch chan int) {
+	i := 0
+
+	for {
+		wg.Add(1)
+		fmt.Println("sending ----> ", i)
+		ch <- i
+		i++
 	}
+	wg.Done()
 }
 
-func factorizor(factor, num int) func() int {
-	return func() int {
-		return num * factor
+func rcv(wg sync.WaitGroup, ch chan int) {
+
+	for {
+		wg.Add(1)
+		rc := <-ch
+		fmt.Println("receiveed ---> ", rc)
 	}
+	wg.Done()
 }
 
-func p(a ...interface{}) {
-	for _, val := range a {
-		fmt.Printf("**%v\n", val)
-	}
+type human struct {
+	Name    string
+	Age     uint16
+	Friends []string
 }
 
 func main() {
-	defer catchpanic()
-	slc := []int{}
-	slc = append(slc, 20, 303)
-	fmt.Println(slc, len(slc))
-	// slc[0] = 0
-	println("wow", slc)
-	if slc[0] == 0 {panic("noooo, not zero")}
-
-	f := factorizor(10, 8)
-	fmt.Println(f())
-	p(20, "hello", '5', slc)
+	mine := human{
+		Name: "bruno", 
+		Age: 10, 
+		Friends: []string{"one", "two", "three"},
+	}
+	data, err := json.Marshal(mine)
+	if err != nil {
+		fmt.Println("errr", err)
+	}
+	fmt.Printf("%s\n--", data)
 }
