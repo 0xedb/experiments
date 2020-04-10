@@ -1,48 +1,32 @@
-package main
+package main 
+import "fmt"
+import "sync"
+// import "time"
 
-import (
-	"encoding/json"
-	"fmt"
-	"sync"
-)
-
-func wrt(wg sync.WaitGroup, ch chan int) {
+func wrt(wg *sync.WaitGroup, ch *chan int) {
 	i := 0
-
+	wg.Add(1)
 	for {
-		wg.Add(1)
 		fmt.Println("sending ----> ", i)
-		ch <- i
+		*ch <- i
 		i++
 	}
 	wg.Done()
 }
 
-func rcv(wg sync.WaitGroup, ch chan int) {
-
+func rcv(wg *sync.WaitGroup, ch *chan int) {
+	wg.Add(1)
 	for {
-		wg.Add(1)
-		rc := <-ch
+		rc := <- *ch
 		fmt.Println("receiveed ---> ", rc)
 	}
 	wg.Done()
 }
 
-type human struct {
-	Name    string
-	Age     uint16
-	Friends []string
-}
-
 func main() {
-	mine := human{
-		Name: "bruno", 
-		Age: 10, 
-		Friends: []string{"one", "two", "three"},
-	}
-	data, err := json.Marshal(mine)
-	if err != nil {
-		fmt.Println("errr", err)
-	}
-	fmt.Printf("%s\n--", data)
+	var wg sync.WaitGroup
+	ch := make(chan int)
+	go wrt(&wg, &ch)
+	go rcv(&wg, &ch)
+	wg.Wait()
 }
